@@ -24,8 +24,40 @@
     },
     "config": {
         "pio": {
-            "domain": "vm.devcomp.io",
-            "namespace": "devcomp-ws-sibling"
+            "domain": "firebug.io",
+            "namespace": "firebug-io"
+        },
+        "pio.dns": {
+            "adapters": {
+                "dnsimple": {
+                    "email": "{{env.DNSIMPLE_EMAIL}}",
+                    "token": "{{env.DNSIMPLE_TOKEN}}"
+                }
+            }
+        }        
+    },
+    "services": {
+        "1-io.pinf": {
+            "io.pinf.server.smi": {
+                "config": {
+                    "host": "assets.{{config.pio.hostname}}",
+                    "catalogs": {
+                        "os-inception": {
+                            "uri": "http://pio-catalog.os-inception-iae5f554-2.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/df57249d40047ed460bf3b458719f92d8d147f54",
+                            "headers": {
+                                "x-auth-code": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
+                            }
+                        }
+                    }
+                },
+                "config.plugin": {
+                    "pio.proxy": {
+                        "vhosts": {
+                            "assets.{{config.pio.hostname}}": "127.0.0.1:8109"
+                        }
+                    }                    
+                }
+            }
         }
     }
 }
