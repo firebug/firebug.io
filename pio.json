@@ -55,7 +55,21 @@
                         "vhosts": {
                             "assets.{{config.pio.hostname}}": "127.0.0.1:8109"
                         }
-                    }                    
+                    },
+                    "pio.dns": {
+                        "records": {
+                            "{{config.pio.hostname}}": {
+                                "domain": "{{config.pio.domain}}",
+                                "type": "A",
+                                "data": "{{config['pio.vm'].ip}}"
+                            },
+                            "assets.{{config.pio.hostname}}": {
+                                "domain": "{{config.pio.domain}}",
+                                "type": "CNAME",
+                                "data": "{{config.pio.hostname}}"
+                            }
+                        }
+                    }
                 }
             }
         }
