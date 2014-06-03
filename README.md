@@ -64,7 +64,14 @@ Catalogs
 
 The following catalogs are exported:
 
-	curl -v -H "x-pio.catalog-key: 37a1043d-596a-4bd5-bf60-6d057b30dec2" http://assets.firebug.io/catalog/os-inception~dev
+	curl -v -H "x-pio.catalog-key: 37a1043d-596a-4bd5-bf60-6d057b30dec2" \
+	  http://assets.firebug.io/catalog/os-inception~dev
+
+	curl -v -H "x-pio.catalog-key: 37a1043d-596a-4bd5-bf60-6d057b30dec2" \
+	  http://assets.firebug.io/catalog/os-inception~int
+
+	curl -v -H "x-pio.catalog-key: 37a1043d-596a-4bd5-bf60-6d057b30dec2" \
+	  http://assets.firebug.io/catalog/os-inception~prod
 
 
 License
