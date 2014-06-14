@@ -65,6 +65,30 @@
                             "headers": {
                                 "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                             }
+                        },
+                        "io-devcomp~dev": {
+                            "uri": "http://assets.pinf.io/catalog/io-devcomp~dev",
+                            "headers": {
+                                "x-pio.catalog-key": "1322705f-cac1-4028-a2c8-1aee1235119c"
+                            }
+                        },
+                        "io-devcomp~int": {
+                            "uri": "http://assets.pinf.io/catalog/io-devcomp~0",
+                            "headers": {
+                                "x-pio.catalog-key": "1322705f-cac1-4028-a2c8-1aee1235119c"
+                            }
+                        },
+                        "io-devcomp~prod": {
+                            "uri": "http://assets.pinf.io/catalog/io-devcomp~0",
+                            "headers": {
+                                "x-pio.catalog-key": "1322705f-cac1-4028-a2c8-1aee1235119c"
+                            }
+                        },
+                        "/io-devcomp~rev~(.*)/": {
+                            "uri": "http://assets.pinf.io/catalog/io-devcomp~rev~$1",
+                            "headers": {
+                                "x-pio.catalog-key": "1322705f-cac1-4028-a2c8-1aee1235119c"
+                            }
                         }
                     }
                 },
