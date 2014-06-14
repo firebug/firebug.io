@@ -73,6 +73,9 @@ The following catalogs are exported:
 	curl -v -H "x-pio.catalog-key: 37a1043d-596a-4bd5-bf60-6d057b30dec2" \
 	  http://assets.firebug.io/catalog/os-inception~prod
 
+	curl -v -H "x-pio.catalog-key: 37a1043d-596a-4bd5-bf60-6d057b30dec2" \
+	  http://assets.firebug.io/catalog/os-inception~rev~*
+
 	curl -v -H "x-pio.catalog-key: 1322705f-cac1-4028-a2c8-1aee1235119c" \
 	  http://assets.firebug.io/catalog/io-devcomp~dev
 
@@ -81,6 +84,9 @@ The following catalogs are exported:
 
 	curl -v -H "x-pio.catalog-key: 1322705f-cac1-4028-a2c8-1aee1235119c" \
 	  http://assets.firebug.io/catalog/io-devcomp~prod
+
+	curl -v -H "x-pio.catalog-key: 1322705f-cac1-4028-a2c8-1aee1235119c" \
+	  http://assets.firebug.io/catalog/io-devcomp~rev~*
 
 
 License
