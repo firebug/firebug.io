@@ -10,11 +10,11 @@ done
 BASE_PATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 BASE_PATH="$( dirname "$BASE_PATH" )"
-cd $BASE_PATH
+cd "$BASE_PATH"
 
 
 
-. $BASE_PATH/bin/activate.sh
+. "$BASE_PATH/bin/activate.sh"
 
 
 
