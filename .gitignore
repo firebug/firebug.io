@@ -4,7 +4,6 @@ node_modules/
 .sm/
 
 /bin/pio
-/bin/pio-ensure-credentials
 /bin/smi
 
 /_upstream/
