@@ -33,7 +33,9 @@
     "config": {
         "pio": {
             "domain": "firebug.io",
-            "namespace": "firebug-io"
+            "namespace": "firebug-io",
+            "serviceRepositoryUri": "https://s3.amazonaws.com/dev.genesis.pio.service.repository/{{config.pio.namespace}}",
+            "profileRegistryUri": "https://s3-us-west-1.amazonaws.com/dev.genesis.pio.profile.registry"
         },
         "pio.dns": {
             "adapters": {
@@ -42,10 +44,43 @@
                     "token": "{{env.DNSIMPLE_TOKEN}}"
                 }
             }
-        }        
+        },
+        "pio.profile": {
+            "profileKey": "{{env.PIO_PROFILE_KEY}}",
+            "profileSecret": "{{env.PIO_PROFILE_SECRET}}",
+            "adapters": {
+                "aws": {
+                    "region": "us-west-1",
+                    "accessKeyId": "{{env.AWS_ACCESS_KEY}}",
+                    "secretAccessKey": "{{env.AWS_SECRET_KEY}}"
+                }
+            }
+        }
     },
     "services": {
+        "0-pio": {
+            "pio.server": {
+                "config": {
+                    "adminSubdomain": "io-devcomp-portal"
+                }
+            }
+        },
         "1-io.pinf": {
+            "io.pinf.server.auth": {
+                "config": {
+                    "groups": {
+                        "owners": {
+                            "role": "OWNER",
+                            "inherits": "https://github.com/orgs/firebug/teams/owners"
+                        },
+                        "admin": {
+                            "role": "CORE-CONTRIBUTOR",
+                            "inherits": "https://github.com/orgs/firebug/teams/firebug-working-group"
+                        }
+                    },
+                    "loggedInRedirect": "http://io-devcomp-portal.{{config.pio.hostname}}:8013/"
+                }
+            },
             "io.pinf.server.smi": {
                 "config": {
                     "host": "assets.{{config.pio.hostname}}",
@@ -122,6 +157,17 @@
                     }
                 }
             }
-        }
+        },
+        "myissues": {
+            "myissues.collector.github": {
+                "config": {
+                    "watch": {
+                        "organizations": {
+                            "firebug": true
+                        }
+                    }
+                }
+            }
+        }        
     }
 }
