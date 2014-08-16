@@ -32,7 +32,7 @@
     },
     "config": {
         "pio": {
-            "domain": "vm.devcomp.io",
+            "domain": "vm.devcomp.net",
             "namespace": "devcomp-ws-sibling"
         }
     }
