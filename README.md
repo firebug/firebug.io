@@ -89,17 +89,28 @@ Provision instance and deploy services:
 
     pio deploy
 
+Commit to own repository:
+
+	git remote rm origin
+	git remote add origin <URI>
+	git push origin master
+
 
 Getting Updates
 ===============
 
-For each workspace:
+Workspace changes:
 
     source bin/activate.sh
-	pio clean
 	git pull origin master
+	pio clean
 	bin/install.sh
 	pio deploy
+
+Workspace template changes:
+
+	git remote add upstream git@github.com:devcomp-io/devcomp.workspace.sibling.git
+	git pull upstream master
 
 
 License
