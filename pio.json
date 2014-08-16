@@ -1,6 +1,7 @@
 {
     "extends": [
-        "os.inception.profile/source/profile.proto.json"
+        "os.inception.profile/source/profile.proto.json",
+        "io.devcomp.meta.profiles/source/profile.proto.json"
     ],
     "uuid": "04782e3e-33ad-40af-ad02-495b2fbba392",
     "upstream": {
@@ -12,15 +13,22 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://assets.pinf.io/catalog/os-inception~0",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/f804e4035c9d47a6077f1d3c52070cf152747d35",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
+                }
+            },
+            "io-devcomp": {
+                "uri": "http://pio-catalog.devcomp-i80fde72-3.vm.cadorn.github.pinf.me:8013/catalog/io.devcomp/c2ecb797f070123218c48be1875df5977615b7f3",
+                "headers": {
+                    "x-pio.catalog-key": "1322705f-cac1-4028-a2c8-1aee1235119c"
                 }
             }
         }
     },
     "mappings": {
-        "os.inception.profile": "os-inception/os.inception.profile"
+        "os.inception.profile": "os-inception/os.inception.profile",
+        "io.devcomp.meta.profiles": "io-devcomp/io.devcomp.meta.profiles"
     },
     "config": {
         "pio": {
