@@ -7,19 +7,21 @@
     "upstream": {
         "packages": {
             "os-inception": [
-                "../os.inception/services/*/*",
-                "../devcomp/_upstream/*/*"
+                "/genesis/os.inception/services/*/*"
+            ],
+            "io-devcomp": [
+                "/genesis/devcomp/services/*/*"
             ]
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/10d281ab26ff0b43f0ad847ffd24e5328d6e532b",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/9781d77933600ddda5fae36437e04491222510bb",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
             },
             "io-devcomp": {
-                "uri": "http://pio-catalog.devcomp-i80fde72-3.vm.cadorn.github.pinf.me:8013/catalog/io.devcomp/30cd05c7c23d4c21fc5e5773136d029680b53158",
+                "uri": "http://pio-catalog.devcomp-i80fde72-3.vm.cadorn.github.pinf.me:8013/catalog/io.devcomp/eead6df7c25274a594f9a2fbb65ca0a6a3d035e6",
                 "headers": {
                     "x-pio.catalog-key": "1322705f-cac1-4028-a2c8-1aee1235119c"
                 }
@@ -61,7 +63,9 @@
         "0-pio": {
             "pio.server": {
                 "config": {
-                    "adminSubdomain": "io-devcomp-portal"
+                    "adminSubdomain": "io-devcomp-portal",
+                    "authorizedSessionUrl": "http://{{config.pio.hostname}}/user/session/authorized",
+                    "logoutSessionUrl": "http://{{config.pio.hostname}}/logout"
                 }
             }
         },
@@ -168,6 +172,9 @@
                     }
                 }
             }
-        }        
-    }
+        }
+    },
+    "overrides": [
+        "{{env.PIO_PROFILE_PATH}}"
+    ]
 }
