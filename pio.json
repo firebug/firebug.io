@@ -15,13 +15,13 @@
         },
         "catalogs": {
             "os-inception": {
-                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/9781d77933600ddda5fae36437e04491222510bb",
+                "uri": "http://pio-catalog.os-inception-iae5f554-5.vm.cadorn.github.pinf.me:8013/catalog/io.pinf.pio/678fc0ebb346e7180316953cd0996c0d2cc54987",
                 "headers": {
                     "x-pio.catalog-key": "37a1043d-596a-4bd5-bf60-6d057b30dec2"
                 }
             },
             "io-devcomp": {
-                "uri": "http://pio-catalog.devcomp-i80fde72-3.vm.cadorn.github.pinf.me:8013/catalog/io.devcomp/eead6df7c25274a594f9a2fbb65ca0a6a3d035e6",
+                "uri": "http://pio-catalog.devcomp-i80fde72-3.vm.cadorn.github.pinf.me:8013/catalog/io.devcomp/25f7a7cf227008712ffd735164f26885f8341ea7",
                 "headers": {
                     "x-pio.catalog-key": "1322705f-cac1-4028-a2c8-1aee1235119c"
                 }
@@ -168,6 +168,24 @@
                     "watch": {
                         "organizations": {
                             "firebug": true
+                        }
+                    }
+                }
+            },
+            "myissues.browser": {
+                "config.plugin": {
+                    "pio.proxy": {
+                        "vhosts": {
+                            "issues.{{config.pio.hostname}}": "127.0.0.1:89"
+                        }
+                    },
+                    "pio.dns": {
+                        "records": {
+                            "issues.{{config.pio.hostname}}": {
+                                "domain": "{{config.pio.domain}}",
+                                "type": "CNAME",
+                                "data": "{{config.pio.hostname}}"
+                            }
                         }
                     }
                 }
