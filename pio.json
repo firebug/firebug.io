@@ -21,7 +21,7 @@
                 }
             },
             "io-devcomp": {
-                "uri": "http://pio-catalog.devcomp-i80fde72-3.vm.cadorn.github.pinf.me:8013/catalog/io.devcomp/2fe84112c69fa3f11dc0a552a900f8dcb11bfbcf",
+                "uri": "http://pio-catalog.devcomp-i80fde72-3.vm.cadorn.github.pinf.me:8013/catalog/io.devcomp/8436d6bd19c8b2f746d34e6ef9e4eba486fc89bd",
                 "headers": {
                     "x-pio.catalog-key": "1322705f-cac1-4028-a2c8-1aee1235119c"
                 }
