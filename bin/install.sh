@@ -34,17 +34,17 @@ ln -s ../node_modules/.bin/smi bin/smi
 
 
 # For dev when working on `smi` tooling.
-if [ -d "../os.inception" ]; then
+if [ -d "/genesis/os.inception" ]; then
 	rm -Rf node_modules/smi.cli
-	ln -s ../../os.inception/services/0-sm/smi.cli node_modules/smi.cli
-elif [ -d "../devcomp" ]; then
+	ln -s /genesis/os.inception/services/0-sm/smi.cli node_modules/smi.cli
+elif [ -d "/genesis/devcomp" ]; then
 	rm -Rf node_modules/smi.cli
-	ln -s ../../devcomp/_upstream/os-inception/smi.cli/source node_modules/smi.cli
+	ln -s /genesis/devcomp/_upstream/os-inception/smi.cli/source node_modules/smi.cli
 fi
 
 
 
-bin/smi install
+bin/smi install -vd
 
 rm bin/pio-ensure-credentials || true
 ln -s ../_upstream/os-inception/pio.cli/source/pio-ensure-credentials.sh bin/pio-ensure-credentials
